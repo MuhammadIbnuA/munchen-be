@@ -33,7 +33,7 @@ function FormLogin({ onLogin }) {
       onLogin(token);
       setLoggedIn(true);
 
-      history.push('/home');
+      history.push('/data');
     } catch (error) {
       setError(error.message);
     }
