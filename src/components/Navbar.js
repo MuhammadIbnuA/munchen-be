@@ -11,7 +11,7 @@ function NavbarComponent({ loggedIn, onLogout }) {
           <Container>
             <Navbar.Brand href="#home">Muchen Kayam</Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/data">Home</Nav.Link>
               <Nav.Link href="/about">About</Nav.Link>
             </Nav>
             <Nav>

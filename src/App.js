@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import About from './pages/About';
 import Home from './pages/Home';
 import NavbarComponent from './components/Navbar';
@@ -41,11 +41,10 @@ function App() {
       <NavbarComponent loggedIn={loggedIn} onLogout={handleLogout} />
       <Switch>
         <Route exact path="/">
-          {!loggedIn ? (
-            <FormLogin onLogin={handleLogin} />
-          ) : (
-            <Home />
-          )}
+          {loggedIn ? <Home /> : <FormLogin onLogin={handleLogin} />}
+        </Route>
+        <Route path="/data">
+          {loggedIn ? <Home /> : <Redirect to="/" />}
         </Route>
         <Route path="/about" component={About} />
       </Switch>

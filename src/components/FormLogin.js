@@ -40,7 +40,7 @@ function FormLogin({ onLogin }) {
   };
 
   if (loggedIn) {
-    return <Redirect to="/home" />;
+    return <Redirect to="/data" />;
   }
 
   return (
